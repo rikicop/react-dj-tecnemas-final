@@ -21,13 +21,12 @@ const HeroSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </HeroBg>
             <HeroContent>
-                <HeroH1>Virtual Banking Made Easy</HeroH1>
+                <HeroH1>Bienvenidos a Tecnemas</HeroH1>
                 <HeroP>
-                    Sign up para una cuenta nueva y recibe $250 en
-                    crédito con tu pago.
+                "Instrumentos filosóficos para emprendimientos tecnológicos"
                 </HeroP>
                 <HeroBtnWrapper>
-                    <Button to="signup"
+                    <Button to="principal"
                         onMouseEnter={onHover}
                         onMouseLeave={onHover}
                         primary='true'
@@ -38,7 +37,7 @@ const HeroSection = () => {
                         exact='true'
                         offset={-80}
                     >
-                        Get started {hover ? <ArrowFoward /> : <ArrowRight />}
+                        Bienvenido {hover ? <ArrowFoward /> : <ArrowRight />}
                     </Button>
                 </HeroBtnWrapper>
             </HeroContent>

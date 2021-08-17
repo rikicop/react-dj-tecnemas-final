@@ -74,6 +74,7 @@ export const NavItem = styled.li `
 `;
 
 export const NavLinks = styled(LinkS)`
+        font-weight:600;
         color:#fff;
         display:flex;
         align-items:center;
@@ -83,7 +84,7 @@ export const NavLinks = styled(LinkS)`
         cursor: pointer;
 
         &.active {
-            border-bottom: 3px solid #01bf71;
+            border-bottom: 3px solid #9a69f3;
         }
 `;
 
@@ -97,8 +98,9 @@ export const NavBtn = styled.nav`
 `;
 
 export const NavBtnLink = styled(LinkR)`
+        font-weight: bold ;
         border-radius: 50px;
-        background: #01bf71;
+        background: #9a69f3;
         white-space: nowrap;
         padding: 10px 22px;
         color: #010606;

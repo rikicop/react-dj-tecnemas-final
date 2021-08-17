@@ -1,0 +1,100 @@
+.carusel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #ffffff;
+  --swiper-navigation-color: #000000;
+  --swiper-navigation-size: 20px;
+  overflow: hidden;
+}
+
+.carusel-title{
+  padding: 30px;
+  color: #9a69f3;
+}
+
+.swiper-container {
+  background-color: rgb(0, 0, 0);
+  height: 62%; 
+  width: 70%;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+
+.swiper-slide {
+  margin-top: 5px;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-content {
+  background-color: #fff;
+  width: 399px;
+  height: 359px;
+  margin: 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
+  /* new */
+  line-height: 15px;
+}
+
+.user-image {
+  width: 80px;
+  height: 80px;
+  margin-top: 50px;
+  border-radius: 45px;
+  border-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.user-name {
+ margin-top: 0px;
+ padding: 10px;
+}
+
+.user-title {
+  line-height: 15px;
+  margin-bottom: 12px;
+  color: black;
+  font-weight: bold;
+}
+
+.user-photo {
+  border-radius: 75px;
+  border-color: black;
+  border-style: solid;
+  width: 130px;
+  margin-bottom: 70px;
+}
+
+.user-testimonial {
+  font-size: medium;
+}
+
+@media (min-width: 360px) and (orientation: landscape) {
+
+  .swiper-container {
+    height: 80%; 
+    
+  }
+
+ }

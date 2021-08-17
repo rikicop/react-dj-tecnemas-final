@@ -15,7 +15,7 @@ import {InfoContainer,
 
 const InfoSection  = ({
     lightBg, 
-    id, 
+    id, go,
     imgStart, 
     topLine, 
     lightText, 
@@ -36,7 +36,7 @@ const InfoSection  = ({
                            <Heading lightText={lightText}>{headline}</Heading>
                            <Subtitle darkText={darkText}>{description}</Subtitle>
                            <BtnWrap>
-                               <Button to='home'
+                               <Button to={go}
                                 smooth = {true}
                                 duration = {500}
                                 spy={true}

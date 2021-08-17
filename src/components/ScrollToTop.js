@@ -7,7 +7,9 @@ export default function ScrollToTop(){
 
     useEffect(
         ()=>{
+            const ac = new AbortController();
             window.scrollTo(0,0);
+            return () => ac.abort(); 
 
         },
         [pathname]

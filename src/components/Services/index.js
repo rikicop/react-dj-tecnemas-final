@@ -1,39 +1,46 @@
 import React from 'react'
-import Icon1 from '../../images/svg-1.svg'
-import Icon2 from '../../images/svg-2.svg'
-import Icon3 from '../../images/svg-3.svg'
 import { ServicesCard, 
          ServicesContainer,
          ServicesH1, 
          ServicesH2, 
          ServicesIcon, 
          ServicesP, 
-         ServicesWrapper,
+         ServicesWrapper,ServicesLink
          } from './ServicesElements'
+
+import useFetch from './useFetch';
 
 
 const Services = () => {
+    const {data : blogs, isPending, error} = useFetch('https://fotalora.pythonanywhere.com/api/')
+    
+
     return (
-        <ServicesContainer id="services">
-            <ServicesH1>Our Services</ServicesH1>
+        <>
+        {error && <div style={{color:'red'}}> {error} </div>}
+        {isPending && <div> Cargando... </div> }
+        
+        <ServicesContainer id="servicios">
+            <ServicesH1>Publicaciones</ServicesH1>
             <ServicesWrapper>
-                <ServicesCard>
-                    <ServicesIcon src={Icon1}/>
-                    <ServicesH2>Reduce Expenses</ServicesH2>
-                    <ServicesP>We help reduce your fess and increase your overall revenue.</ServicesP>
-                </ServicesCard>
-                <ServicesCard>
-                    <ServicesIcon src={Icon2}/>
-                    <ServicesH2>Virtual Offices</ServicesH2>
-                    <ServicesP>You can access our plataform online anywhere in the world.</ServicesP>
-                </ServicesCard>
-                <ServicesCard>
-                    <ServicesIcon src={Icon3}/>
-                    <ServicesH2>Premium Benefits</ServicesH2>
-                    <ServicesP>Unlock our special membership card that returns 5% cash back.</ServicesP>
-                </ServicesCard>
+            { blogs && blogs.map((blog, i)=>{
+              if (i >= blogs.length - 3) {
+                return (
+                  <ServicesLink to={`/api/${blog.id}`} key={blog.id}>
+                    <ServicesCard>
+                        <ServicesIcon src={blog.foto}/>
+                        <ServicesH2>{blog.title}</ServicesH2>
+                        <ServicesP>{blog.description}</ServicesP>
+                    </ServicesCard>
+                  </ServicesLink>)
+              }else{
+                return null
+              }
+            })}  
             </ServicesWrapper>   
         </ServicesContainer>
+       
+        </>
     )
 }
 

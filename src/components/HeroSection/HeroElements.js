@@ -1,8 +1,10 @@
 
 import styled from 'styled-components';
+import ImgBg from '../../images/matrix.jpg';
 import {MdKeyboardArrowRight, MdArrowForward} from 'react-icons/md';
 
 export const HeroContainer = styled.div`
+/* background: url(${ImgBg}) center center/cover no-repeat; */
 background: #0c0c0c;
 display: flex;
 justify-content: center;

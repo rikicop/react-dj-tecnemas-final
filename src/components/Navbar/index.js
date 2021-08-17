@@ -25,7 +25,9 @@ const Navbar = ({ toggle }) => {
     }
 
     useEffect(() => {
+        const ac = new AbortController();
         window.addEventListener('scroll', changeNav);
+        return () => ac.abort(); 
     }, [])
 
     const toggleHome = () =>{
@@ -38,13 +40,13 @@ const Navbar = ({ toggle }) => {
             <IconContext.Provider value={{ color: '#fff' }}>
                 <Nav scrollNav={scrollNav}>
                     <NavbarContainer>
-                        <NavLogo to='/' onClick={toggleHome}>Dolla</NavLogo>
+                        <NavLogo to='/' onClick={toggleHome}>Tecnemas</NavLogo>
                         <MobileIcon onClick={toggle}>
                             <FaBars />
                         </MobileIcon>
                         <NavMenu>
                             <NavItem>
-                                <NavLinks to='about' 
+                                <NavLinks to='principal' 
                                     smooth={true} 
                                     duration={500}
                                     spy={true}
@@ -54,45 +56,34 @@ const Navbar = ({ toggle }) => {
                                      activeClass="active" */
                                     
                                 >
-                                        About
+                                        Principal
                                 </NavLinks>
                             </NavItem>
                             <NavItem>
-                                <NavLinks to='discover' 
-                                    smooth={true} 
-                                    duration={500}
-                                    spy={true}
-                                    exact='true'
-                                    offset={-80}
-                                >
-                                    Discover
-                                </NavLinks>
-                            </NavItem>
-                            <NavItem>
-                                <NavLinks to='services'
+                                <NavLinks to='servicios'
                                     smooth={true} 
                                     duration={500}
                                     spy={true}
                                     exact='true'
                                     offset={-80}  
                                 >
-                                    Services
+                                    Publicaciones
                                 </NavLinks>
                             </NavItem>
                             <NavItem>
-                                <NavLinks to='signup'
+                                <NavLinks to='carusel'
                                     smooth={true} 
                                     duration={500}
                                     spy={true}
                                     exact='true'
                                     offset={-80}
                                 >
-                                    Sign Up
+                                    Equipo
                                 </NavLinks>
                             </NavItem>
                         </NavMenu>
                         <NavBtn>
-                            <NavBtnLink to='/signin'>Sign In</NavBtnLink>
+                            <NavBtnLink to='/api'>Blog</NavBtnLink>
                         </NavBtn>
                     </NavbarContainer>
                 </Nav>

@@ -5,11 +5,11 @@ import HeroSection from '../components/HeroSection'
 import InfoSection from '../components/InfoSection'
 import {
     homeObjOne,
-    homeObjThree,
     homeObjTwo
 } from '../components/InfoSection/Data'
 import Services from '../components/Services'
 import Footer from '../components/Footer'
+import Carusel from '../components/Carusel/Carusel'
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -27,7 +27,7 @@ const Home = () => {
             <InfoSection {...homeObjOne} />
             <InfoSection {...homeObjTwo} />
             <Services />
-            <InfoSection {...homeObjThree} />
+            <Carusel />
             <Footer/>
         </>
     )
