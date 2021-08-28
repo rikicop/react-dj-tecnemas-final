@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-/* import "./Card.scss" */
 import {Container,Navbar,Wrapper,Card,CardImage,
         CardTitle,CardBtn, GlobalStyle, 
         LeftNavTitle, RightNavTitle, NavBtnLink} from './CardElements';
